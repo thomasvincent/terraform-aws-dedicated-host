@@ -1,0 +1,47 @@
+formatter: markdown
+header-from: main.tf
+footer-from: ""
+
+sections:
+  hide: []
+  show: []
+
+content: |-
+  {{ .Header }}
+
+  ## Usage
+
+  ```hcl
+  module "dedicated_host" {
+    source = "github.com/thomasvincent/terraform-aws-dedicated-host-"
+
+    name              = "my-dedicated-host"
+    availability_zone = "us-west-2a"
+    instance_type     = "c5.large"
+    auto_placement    = "on"
+    host_recovery     = "on"
+
+    tags = {
+      Environment = "production"
+      Project     = "my-project"
+    }
+  }
+  ```
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+output:
+  file: README.md
+  mode: replace
+
+sort:
+  enabled: true
+  by: name
