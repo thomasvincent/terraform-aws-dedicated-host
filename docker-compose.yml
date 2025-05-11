@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  terraform:
+    build: .
+    volumes:
+      - .:/terraform
+      - ~/.aws:/root/.aws:ro
+    environment:
+      - AWS_PROFILE=${AWS_PROFILE:-default}
+      - AWS_REGION=${AWS_REGION:-us-west-2}
+    working_dir: /terraform
+    entrypoint: bash

@@ -1,19 +1,22 @@
-## Security Policy
+# Security Policy
 
-We take security seriously. If you discover any security related issues, please email thomasvincent@[your-domain] instead of using the issue tracker.
+## Reporting a Vulnerability
 
-### Supported Versions
+Please report security vulnerabilities by opening a GitHub issue with the label 'security'. 
+
+## Supported Versions
+
+We support the latest minor version with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| X.X.X   | :white_check_mark: |
-| X.X.X   | :x:                |
+| latest  | :white_check_mark: |
 
-### Reporting a Vulnerability
+## Security Considerations
 
-Please report (suspected) security vulnerabilities to thomasvincent@[your-domain]. You will receive a response from us within [your-response-timeframe]. If the issue is confirmed, we will release a patch as soon as possible depending on complexity but historically within [your-patch-timeframe].
+This Terraform module aims to follow AWS security best practices. When using this module, consider:
 
-### Additional Security Considerations
-[Add language or framework-specific OWASP Top 10 guidance here]
-
-[If applicable, add information about your bug bounty program here]
+1. Ensure you're using the latest version to benefit from security improvements
+2. Always review the plan output before applying
+3. Use appropriate IAM permissions when deploying infrastructure
+4. Monitor your dedicated hosts for suspicious activity
