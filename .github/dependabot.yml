@@ -1,0 +1,58 @@
+version: 2
+updates:
+  # Terraform
+  - package-ecosystem: "terraform"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    open-pull-requests-limit: 10
+    assignees:
+      - "thomasvincent"
+    labels:
+      - "dependencies"
+      - "terraform"
+    commit-message:
+      prefix: "build(deps)"
+      include: "scope"
+    rebase-strategy: "auto"
+
+  # Go modules (for tests)
+  - package-ecosystem: "gomod"
+    directory: "/test"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    open-pull-requests-limit: 5
+    assignees:
+      - "thomasvincent"
+    labels:
+      - "dependencies"
+      - "go"
+    commit-message:
+      prefix: "build(deps)"
+      include: "scope"
+    rebase-strategy: "auto"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    open-pull-requests-limit: 5
+    assignees:
+      - "thomasvincent"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    rebase-strategy: "auto"
