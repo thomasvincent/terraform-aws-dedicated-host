@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ main ]
 
+# Cancel previous runs on the same PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+
 permissions:
   contents: read
 
@@ -13,6 +19,7 @@ jobs:
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
+    timeout-minutes: 15  # Prevent hung jobs
     permissions:
       pull-requests: write
       contents: read
