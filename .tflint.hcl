@@ -8,12 +8,6 @@ config {
   module = true
   force = false
   disabled_by_default = false
-  
-  # Enable module inspection
-  module_inspection = true
-  
-  # Specify working directory
-  working_directory = "."
 }
 
 # General Terraform rules
