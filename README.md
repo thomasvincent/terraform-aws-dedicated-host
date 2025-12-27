@@ -2,6 +2,10 @@
 
 This Terraform module creates an AWS EC2 Dedicated Host resource with support for all available configuration options.
 
+## Architecture
+
+![Architecture Diagram](architecture.png)
+
 ## Features
 
 - Creates an EC2 Dedicated Host
