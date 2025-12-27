@@ -3,7 +3,7 @@ module github.com/thomasvincent/terraform-aws-dedicated-host-/test
 go 1.24.0
 
 require (
-	github.com/gruntwork-io/terratest v0.50.0
+	github.com/gruntwork-io/terratest v0.54.0
 	github.com/stretchr/testify v1.11.1
 )
 
