@@ -94,7 +94,7 @@ variable "prevent_instance_deletion" {
 variable "enable_monitoring" {
   description = "Whether to enable CloudWatch monitoring for the Dedicated Host."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "alarm_actions" {
