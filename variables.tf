@@ -50,3 +50,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "monitoring" {
+  description = "Enable detailed monitoring for the dedicated host"
+  type        = bool
+  default     = true
+}
