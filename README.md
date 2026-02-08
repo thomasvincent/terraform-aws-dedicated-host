@@ -4,18 +4,15 @@ This Terraform module creates an AWS EC2 Dedicated Host resource with support fo
 
 ## Architecture
 
-![Architecture Diagram](architecture.png)
+Creates an EC2 Dedicated Host with configurable placement, recovery, and instance type settings. Supports AWS Outposts for hybrid deployments.
 
-## Features
+## Prerequisites
 
-- Creates an EC2 Dedicated Host
-- Supports host recovery configuration
-- Configurable auto placement options
-- Support for tagging
-- Complete example configuration
-- Comprehensive test coverage
+- Terraform >= 1.0.0
+- AWS Provider >= 4.0
+- Valid AWS credentials configured
 
-## Usage
+## Quick Start
 
 ```hcl
 module "dedicated_host" {
@@ -33,6 +30,22 @@ module "dedicated_host" {
   }
 }
 ```
+
+Initialize and apply:
+
+```bash
+terraform init
+terraform plan
+terraform apply
+```
+
+## Module Structure
+
+- `main.tf` - Primary resource definitions
+- `variables.tf` - Input variable declarations
+- `outputs.tf` - Output value definitions
+- `versions.tf` - Provider version constraints
+- `examples/` - Usage examples
 
 ## Requirements
 
@@ -76,18 +89,28 @@ module "dedicated_host" {
 | owner_id | The ID of the AWS account that owns the Dedicated Host |
 | tags_all | A map of tags assigned to the resource, including those inherited from the provider |
 
+## Development
+
+Format code:
+```bash
+terraform fmt -recursive
+```
+
+Validate configuration:
+```bash
+terraform validate
+```
+
+Lint with tflint:
+```bash
+tflint
+```
+
 ## Testing
 
-The module includes a test suite using Terratest and Docker for reproducible testing.
-
+Run tests using Terratest:
 ```bash
-# Run tests using Docker
 make docker-test
-
-# Run linting and validation
-make
-
-# Format code
 make fmt
 ```
 
