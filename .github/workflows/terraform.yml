@@ -46,7 +46,7 @@ jobs:
     - name: Run tfsec security scan
       uses: aquasecurity/tfsec-action@b466648d6e39e7c75324f25d83891162a721f2d6 # v1.0.3
       with:
-        soft_fail: true
+        soft_fail: false
 
     - name: Terraform Plan
       id: plan
